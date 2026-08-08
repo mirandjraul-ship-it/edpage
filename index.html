@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eulises Durán | Consultor Financiero &amp; Executive Coach — Aceleración de Resultados</title>
+<meta name="description" content="Eulises Durán, Consultor Financiero y Executive & Business Coach con más de 15 años acompañando a CEOs y comités ejecutivos en Latinoamérica a alinear estrategia, liderazgo y ejecución para acelerar resultados medibles.">
+
+<meta property="og:title" content="Eulises Durán | Consultor Financiero & Executive Coach">
+<meta property="og:description" content="Alineación estratégica, liderazgo consciente y escalamiento operacional para organizaciones de alto crecimiento en Latinoamérica.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy: #0B1F3A;
+    --navy-deep: #123B6A;
+    --accent: #1F5FA8;
+    --white: #FFFFFF;
+    --pearl: #F4F6F8;
+    --graphite: #2B2F36;
+    --mist: #D6E4F5;
+
+    --font-display: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --ease: cubic-bezier(.16,.84,.44,1);
+    --shadow-soft: 0 30px 80px -20px rgba(11,31,58,0.14);
+    --shadow-lift: 0 40px 100px -24px rgba(11,31,58,0.22);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family: var(--font-body);
+    color: var(--graphite);
+    background: var(--white);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+  :focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .container{ max-width: 1240px; margin: 0 auto; padding: 0 40px; position: relative; }
+
+  .eyebrow{
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent);
+    display:flex; align-items:center; gap:14px;
+  }
+  .eyebrow::before{ content:""; width:30px; height:1px; background: var(--accent); }
+
+  h1,h2,h3{ font-family: var(--font-display); letter-spacing: 0.005em; color: var(--navy); font-weight: 700; }
+
+  .section-title{
+    font-size: clamp(2rem, 3.4vw, 2.9rem);
+    line-height: 1.14;
+    margin: 22px 0 22px;
+    letter-spacing: -0.015em;
+    max-width: 720px;
+  }
+  .section-lede{ max-width: 600px; color: #5B6673; font-size: 1.06rem; font-weight: 300; }
+  .section-head{ margin-bottom: 74px; position: relative; }
+
+  /* editorial watermark numeral */
+  .wm{
+    position: absolute;
+    top: -30px; right: 40px;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(5rem, 11vw, 9.5rem);
+    color: var(--navy);
+    opacity: 0.035;
+    letter-spacing: -0.04em;
+    pointer-events:none;
+    z-index: 0;
+    line-height: 1;
+  }
+  .wm-light{ color: var(--white); opacity: 0.05; }
+
+  section{ padding: 168px 0; position: relative; }
+  .bg-pearl{ background: linear-gradient(180deg, #FBFCFD 0%, var(--pearl) 100%); }
+
+  /* section divider */
+  .divider{
+    width: 120px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent) 50%, transparent);
+    opacity: 0.45;
+    margin: 0 0 30px;
+  }
+  .divider-center{ margin-left:auto; margin-right:auto; }
+  .rule-top{ border-top: 1px solid rgba(11,31,58,0.07); }
+
+  .reveal{ opacity: 0; transform: translateY(32px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
+  .reveal.is-visible{ opacity: 1; transform: translateY(0); }
+
+  /* glass surface helpers */
+  .glass{
+    background: rgba(255,255,255,0.58);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border: 1px solid rgba(255,255,255,0.6);
+    box-shadow: var(--shadow-soft);
+  }
+  .glass-dark{
+    background: rgba(255,255,255,0.045);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid rgba(214,228,245,0.14);
+  }
+
+  /* ===================== NAV ===================== */
+  header.nav{
+    position: fixed; top:0; left:0; right:0; z-index: 500;
+    padding: 30px 0;
+    transition: background 0.45s var(--ease), padding 0.45s var(--ease), box-shadow 0.45s var(--ease), backdrop-filter 0.45s var(--ease);
+  }
+  header.nav .container{ display:flex; align-items:center; justify-content:space-between; }
+  header.nav.scrolled{
+    background: rgba(11,31,58,0.82);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    padding: 16px 0;
+    box-shadow: 0 20px 50px rgba(11,31,58,0.18);
+    border-bottom: 1px solid rgba(214,228,245,0.1);
+  }
+  .brand{
+    font-family: var(--font-display); font-weight: 700; font-size: 1.02rem; color: var(--white);
+    letter-spacing: 0.02em; display:flex; flex-direction: column; line-height:1.2;
+  }
+  .brand span{
+    font-family: var(--font-body); font-weight: 400; font-size: 0.64rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--mist); margin-top: 3px;
+  }
+  nav.links{ display:flex; gap: 38px; align-items:center; }
+  nav.links a{ color: var(--white); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.03em; position: relative; padding: 4px 0; opacity:0.9; }
+  nav.links a::after{ content:""; position:absolute; left:0; bottom:-3px; width:0; height:1px; background: var(--mist); transition: width 0.35s var(--ease); }
+  nav.links a:hover::after{ width:100%; }
+  nav.links a:hover{ opacity:1; }
+  .nav-cta{
+    background: rgba(31,95,168,0.9); color: var(--white) !important; padding: 11px 24px; border-radius: 3px;
+    font-size: 0.76rem !important; font-weight: 600 !important; letter-spacing: 0.06em; opacity:1 !important;
+    border: 1px solid rgba(214,228,245,0.25);
+    transition: transform 0.3s var(--ease), background 0.3s var(--ease);
+  }
+  .nav-cta:hover{ transform: translateY(-2px); background: var(--accent); }
+  .nav-cta::after{ display:none; }
+  .nav-toggle{ display:none; }
+  .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
+    content:""; display:block; width:24px; height:2px; background:var(--white); position:relative; transition:0.3s;
+  }
+  .nav-toggle span::before{ position:absolute; top:-8px; width:24px;}
+  .nav-toggle span::after{ position:absolute; top:8px; width:24px;}
+
+  /* ===================== HERO ===================== */
+  .hero{
+    min-height: 102vh; display:flex; align-items:center; position: relative; overflow: hidden;
+    background:
+      radial-gradient(circle at 82% 12%, rgba(31,95,168,0.35), transparent 46%),
+      linear-gradient(150deg, #081627 0%, var(--navy) 38%, var(--navy-deep) 78%, #17497f 130%);
+    padding-top: 90px;
+  }
+  #hero-canvas{ position:absolute; inset:0; width:100%; height:100%; opacity: 0.9; }
+  .hero .container{
+    position: relative; z-index: 2;
+    display:grid; grid-template-columns: 1.18fr 0.82fr; gap: 80px; align-items:center;
+  }
+  .hero-eyebrow{
+    color: var(--mist); font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.32em;
+    text-transform: uppercase; font-weight: 600; margin-bottom: 30px; display:flex; align-items:center; gap:16px;
+  }
+  .hero-eyebrow::before{ content:""; width:40px; height:1px; background: var(--accent); }
+  .hero h1{
+    color: var(--white); font-size: clamp(2.7rem, 4.9vw, 4.3rem); line-height: 1.08; letter-spacing: -0.018em;
+    font-weight: 700; margin-bottom: 6px;
+  }
+  .hero h1 em{
+    font-style: normal; color: var(--mist); font-weight: 300; display:block; font-size: 0.4em;
+    letter-spacing: 0.1em; text-transform: uppercase; margin-top: 22px; opacity: 0.85;
+  }
+  .hero-msg{ color: rgba(255,255,255,0.72); font-size: 1.12rem; font-weight: 300; max-width: 540px; margin: 34px 0 46px; }
+  .hero-actions{ display:flex; gap: 20px; flex-wrap: wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap: 10px; padding: 17px 32px; font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.07em; text-transform: uppercase; border-radius: 3px;
+    transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.35s var(--ease);
+  }
+  .btn-primary{ background: var(--accent); color: var(--white); box-shadow: 0 20px 40px -14px rgba(31,95,168,0.55); }
+  .btn-primary:hover{ transform: translateY(-3px); box-shadow: 0 24px 50px -12px rgba(31,95,168,0.6); }
+  .btn-ghost{ background: rgba(255,255,255,0.04); color: var(--white); border: 1px solid rgba(255,255,255,0.28); backdrop-filter: blur(6px); }
+  .btn-ghost:hover{ background: rgba(255,255,255,0.1); border-color: var(--white); transform: translateY(-3px); }
+
+  .hero-portrait{
+    position: relative; aspect-ratio: 3/4; border-radius: 4px; overflow:hidden;
+    background: linear-gradient(160deg, rgba(214,228,245,0.14), rgba(255,255,255,0.02));
+    border: 1px solid rgba(214,228,245,0.22);
+    box-shadow: var(--shadow-lift);
+  }
+  .hero-portrait::before{
+    content:""; position:absolute; inset:0;
+    background: linear-gradient(200deg, rgba(11,31,58,0.25), rgba(11,31,58,0.6)),
+                repeating-linear-gradient(45deg, rgba(214,228,245,0.045) 0 2px, transparent 2px 16px);
+  }
+  .hero-portrait-label{
+    position: relative; z-index: 1; color: var(--mist); font-family: var(--font-display); font-size: 0.68rem;
+    letter-spacing: 0.16em; text-transform: uppercase; text-align:center; padding: 24px;
+    border: 1px dashed rgba(214,228,245,0.35); margin: 30px;
+  }
+  .hero-scroll{
+    position:absolute; bottom: 40px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.5);
+    font-size: 0.66rem; letter-spacing: 0.28em; text-transform: uppercase;
+    display:flex; flex-direction:column; align-items:center; gap:12px; z-index: 2;
+  }
+  .hero-scroll .line{ width:1px; height:36px; background: rgba(255,255,255,0.35); overflow:hidden; }
+  .hero-scroll .line::after{ content:""; display:block; width:100%; height:50%; background: var(--mist); animation: scrollLine 2s var(--ease) infinite; }
+  @keyframes scrollLine{ 0%{ transform: translateY(-100%); } 100%{ transform: translateY(220%); } }
+
+  /* ===================== CREDIBILITY STRIP ===================== */
+  .strip{ background: var(--pearl); padding: 58px 0; border-bottom: 1px solid #E7ECF1; }
+  .strip .container{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
+  .strip-item{ text-align:center; padding: 0 18px; border-left: 1px solid #DEE5EC; }
+  .strip-item:first-child{ border-left:none; }
+  .strip-item .num{ font-family: var(--font-display); font-weight: 800; color: var(--navy); font-size: 2rem; letter-spacing: -0.02em; }
+  .strip-item .lbl{ font-size: 0.7rem; letter-spacing: 0.06em; color: #74808D; text-transform: uppercase; margin-top: 8px; }
+
+  /* ===================== ABOUT ===================== */
+  .about .container{ display:grid; grid-template-columns: 0.78fr 1.22fr; gap: 90px; align-items: center; }
+  .about-figure{
+    position: relative; aspect-ratio: 4/5; border-radius: 4px;
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    display:flex; align-items:center; justify-content:center; box-shadow: var(--shadow-lift);
+  }
+  .about-figure-label{
+    color: var(--mist); font-family: var(--font-display); font-size: 0.68rem; letter-spacing: 0.16em;
+    text-transform: uppercase; text-align:center; padding: 24px; border: 1px dashed rgba(214,228,245,0.32); margin: 28px;
+  }
+  .about-figure .frame-mark{ position:absolute; width:28px; height:28px; border-color: var(--accent); }
+  .about-figure .fm-tl{ top:16px; left:16px; border-top:2px solid; border-left:2px solid; }
+  .about-figure .fm-br{ bottom:16px; right:16px; border-bottom:2px solid; border-right:2px solid; }
+
+  .about-body p{ color:#525C69; margin-bottom: 20px; font-weight:300; font-size:1.04rem; }
+  .about-quote{
+    position: relative; padding: 8px 0 8px 34px; margin: 40px 0; font-family: var(--font-display);
+    font-size: 1.24rem; color: var(--navy); font-weight: 600; line-height: 1.45;
+    border-left: 2px solid var(--accent);
+  }
+  .about-quote::before{
+    content:"“"; position:absolute; left:-6px; top:-38px; font-size: 5rem; font-weight:800; color: var(--accent);
+    opacity: 0.16; font-family: var(--font-display); line-height:1;
+  }
+  .about-tags{ display:flex; flex-wrap:wrap; gap:12px; margin-top: 30px; }
+  .about-tags span{
+    font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy-deep);
+    background: var(--mist); padding: 9px 16px; border-radius: 3px; font-weight: 600;
+  }
+
+  /* ===================== SPECIALTIES ===================== */
+  .spec-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; position: relative; z-index: 1; }
+  .spec-card{
+    padding: 42px 34px; border-radius: 4px;
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+  }
+  .spec-card:hover{ transform: translateY(-10px); box-shadow: var(--shadow-lift); border-color: rgba(31,95,168,0.3); }
+  .spec-icon{
+    width: 48px; height:48px; display:flex; align-items:center; justify-content:center;
+    background: var(--mist); border-radius: 3px; margin-bottom: 24px; color: var(--navy-deep);
+  }
+  .spec-icon svg{ width:22px; height:22px; }
+  .spec-card h3{ font-size: 1.1rem; margin-bottom: 12px; }
+  .spec-card p{ color:#6B7684; font-size: 0.93rem; font-weight:300; }
+
+  /* ===================== METHODOLOGIES ===================== */
+  .method-rail{ position: relative; margin-top: 66px; padding-top: 4px; }
+  .method-rail::before{ content:""; position:absolute; top: 27px; left:0; right:0; height:1px; background: linear-gradient(90deg, transparent, #DCE3EA 8%, #DCE3EA 92%, transparent); }
+  .method-row{ display:grid; grid-template-columns: repeat(6, 1fr); gap: 22px; }
+  .method-dot{ width: 12px; height:12px; border-radius: 50%; background: var(--white); border: 2px solid var(--accent); margin-bottom: 24px; position:relative; z-index:2; box-shadow: 0 0 0 6px rgba(31,95,168,0.08); }
+  .method-item h4{ font-family: var(--font-display); font-size: 0.9rem; color: var(--navy); margin-bottom: 9px; font-weight:700; }
+  .method-item p{ font-size: 0.8rem; color:#6B7684; font-weight:300; }
+
+  /* ===================== IMPACT / COUNTERS ===================== */
+  .impact{
+    background:
+      radial-gradient(circle at 15% 20%, rgba(31,95,168,0.28), transparent 45%),
+      linear-gradient(165deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: var(--white);
+  }
+  .impact .section-lede{ color: rgba(255,255,255,0.65); }
+  .impact .section-title{ color: var(--white); }
+  .counter-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 64px; position: relative; z-index: 1; }
+  .counter-card{ text-align:center; padding: 40px 18px; border-radius: 4px; }
+  .counter-num{ font-family: var(--font-display); font-weight:800; font-size: clamp(2.3rem, 4vw, 3.3rem); color: var(--white); letter-spacing: -0.02em; }
+  .counter-lbl{ font-size: 0.75rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--mist); margin-top: 12px; }
+
+  /* ===================== CASE STUDIES ===================== */
+  .cases-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; position: relative; z-index: 1; }
+  .case-card{
+    padding: 38px 32px; border-top: 3px solid var(--accent); border-radius: 2px 2px 4px 4px;
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  }
+  .case-card:hover{ transform: translateY(-8px); box-shadow: var(--shadow-lift); }
+  .case-sector{ font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight:700; margin-bottom: 16px; }
+  .case-card p{ color:#525C69; font-size:0.95rem; font-weight:300; margin-bottom:24px; }
+  .case-result{ font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--navy); }
+  .case-result span{ display:block; font-family: var(--font-body); font-size: 0.7rem; font-weight:600; letter-spacing:0.05em; text-transform: uppercase; color:#74808D; margin-top:6px; }
+
+  /* ===================== FORUMS ===================== */
+  .forums{ text-align:center; }
+  .forums .section-lede{ margin: 0 auto 56px; }
+  .forums-row{ display:flex; justify-content:center; gap: 60px; flex-wrap: wrap; }
+  .forum-badge{
+    font-family: var(--font-display); font-weight:700; font-size: 1.35rem; color: var(--navy-deep);
+    letter-spacing: 0.04em; padding: 22px 40px; border-radius: 3px; opacity: 0.9;
+    transition: opacity 0.35s, transform 0.35s, box-shadow 0.35s;
+  }
+  .forum-badge:hover{ opacity:1; transform: translateY(-4px); box-shadow: var(--shadow-soft); }
+
+  /* ===================== SERVICES ===================== */
+  .services-list{ margin-top: 54px; border-top: 1px solid rgba(11,31,58,0.08); position:relative; z-index:1; }
+  .service-row{
+    display:flex; justify-content:space-between; align-items:center; padding: 30px 6px;
+    border-bottom: 1px solid rgba(11,31,58,0.08); transition: padding-left 0.35s var(--ease), color 0.35s var(--ease), background 0.35s var(--ease);
+  }
+  .service-row:hover{ padding-left: 18px; color: var(--accent); background: rgba(31,95,168,0.03); }
+  .service-row .idx{ font-family: var(--font-display); font-weight:700; color: var(--mist); font-size: 0.9rem; width: 44px; -webkit-text-stroke: 1px var(--accent); color: transparent; }
+  .service-row .name{ font-family: var(--font-display); font-weight:600; font-size: 1.16rem; flex:1; color: var(--navy); }
+  .service-row:hover .name{ color: var(--accent); }
+  .service-row .tag{ font-size: 0.72rem; letter-spacing:0.08em; text-transform: uppercase; color:#8A94A1; }
+
+  /* ===================== TESTIMONIALS ===================== */
+  .testimonials{
+    background: radial-gradient(circle at 85% 85%, rgba(31,95,168,0.22), transparent 45%), var(--navy);
+    color: var(--white);
+  }
+  .testi-note{ color: rgba(255,255,255,0.42); font-size: 0.78rem; margin-top: 14px; font-style: italic; }
+  .testi-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 30px; margin-top: 60px; position: relative; z-index: 1; }
+  .testi-card{ padding: 36px 30px; border-radius: 4px; }
+  .testi-quote{ font-size: 0.98rem; font-weight: 300; color: rgba(255,255,255,0.86); margin-bottom: 28px; line-height:1.75; }
+  .testi-name{ font-family: var(--font-display); font-weight:700; font-size:0.95rem; }
+  .testi-role{ font-size: 0.76rem; color: var(--mist); margin-top:4px; }
+
+  /* ===================== FINAL CTA ===================== */
+  .final-cta{
+    background:
+      radial-gradient(circle at 50% 0%, rgba(31,95,168,0.4), transparent 60%),
+      linear-gradient(180deg, var(--navy) 0%, #081627 100%);
+    text-align:center; position: relative; overflow:hidden;
+  }
+  .final-cta .container{ position:relative; z-index:1; }
+  .final-cta h2{ color: var(--white); font-size: clamp(1.8rem, 3.4vw, 2.6rem); max-width: 800px; margin: 0 auto 46px; line-height:1.35; font-weight: 600; }
+
+  /* ===================== FOOTER ===================== */
+  footer{ background: #081627; color: rgba(255,255,255,0.62); padding: 70px 0 34px; }
+  .footer-grid{ display:grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 46px; padding-bottom: 46px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .footer-brand{ font-family: var(--font-display); font-weight:700; color: var(--white); font-size: 1.12rem; }
+  .footer-brand .role{ display:block; font-family: var(--font-body); font-weight:400; font-size: 0.78rem; color: var(--mist); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.1em; }
+  .footer-col h5{ font-family: var(--font-display); color: var(--white); font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 18px; }
+  .footer-col a, .footer-col p{ display:block; font-size: 0.88rem; color: rgba(255,255,255,0.58); margin-bottom: 12px; transition: color 0.25s; }
+  .footer-col a:hover{ color: var(--white); }
+  .footer-bottom{ padding-top: 28px; display:flex; justify-content:space-between; font-size: 0.75rem; color: rgba(255,255,255,0.36); flex-wrap: wrap; gap: 10px; }
+
+  /* ===================== WHATSAPP FLOAT ===================== */
+  .wa-float{
+    position: fixed; bottom: 30px; right: 30px; width: 58px; height: 58px; border-radius: 50%;
+    display:flex; align-items:center; justify-content:center; z-index: 400;
+    background: var(--accent); box-shadow: 0 16px 40px -8px rgba(11,31,58,0.4);
+    transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+  }
+  .wa-float:hover{ transform: scale(1.08); box-shadow: 0 20px 50px -6px rgba(11,31,58,0.5); }
+  .wa-float svg{ width:26px; height:26px; fill: var(--white); }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 980px){
+    section{ padding: 120px 0; }
+    .hero .container{ grid-template-columns: 1fr; }
+    .hero-portrait{ max-width: 360px; margin: 0 auto; }
+    .about .container{ grid-template-columns: 1fr; gap: 56px; }
+    .about-figure{ max-width: 360px; margin: 0 auto; }
+    .spec-grid{ grid-template-columns: repeat(2,1fr); }
+    .method-row{ grid-template-columns: repeat(3,1fr); row-gap: 44px; }
+    .cases-grid{ grid-template-columns: 1fr; }
+    .testi-grid{ grid-template-columns: 1fr; }
+    .counter-grid{ grid-template-columns: repeat(2,1fr); }
+    .strip .container{ grid-template-columns: repeat(2,1fr); row-gap: 28px; }
+    .strip-item:nth-child(3){ border-left:none; }
+    .footer-grid{ grid-template-columns: 1fr; }
+    .wm{ display:none; }
+  }
+  @media (max-width: 720px){
+    nav.links{
+      position: fixed; top:0; right:0; height:100vh; width: 78%; background: var(--navy);
+      flex-direction:column; justify-content:center; align-items:flex-start; padding: 44px; gap: 30px;
+      transform: translateX(100%); transition: transform 0.45s var(--ease);
+    }
+    nav.links.open{ transform: translateX(0); }
+    .nav-toggle{ display:block; }
+    section{ padding: 90px 0; }
+    .spec-grid{ grid-template-columns: 1fr; }
+    .method-row{ grid-template-columns: repeat(2,1fr); }
+    .service-row .tag{ display:none; }
+    .container{ padding: 0 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav" id="siteNav">
+  <div class="container">
+    <a href="#hero" class="brand">EULISES DURÁN <span>Consultor Financiero &amp; Executive Coach</span></a>
+    <nav class="links" id="navLinks">
+      <a href="#sobre">Sobre mí</a>
+      <a href="#especializacion">Especialización</a>
+      <a href="#impacto">Impacto</a>
+      <a href="#casos">Casos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto" class="nav-cta">Agendar reunión</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span></button>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="container">
+    <div>
+      <p class="hero-eyebrow">Consultoría financiera &amp; coaching ejecutivo · Latinoamérica</p>
+      <h1>Estrategia, liderazgo<br>y ejecución, alineados.<em>15+ años acelerando resultados en organizaciones líderes</em></h1>
+      <p class="hero-msg">Acompaño a CEOs, comités ejecutivos y empresas de alto crecimiento en la industria, la banca y la tecnología a traducir visión en resultados medibles: EBITDA, retención de talento y ejecución disciplinada.</p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn btn-primary">Agendar sesión estratégica</a>
+        <a href="#sobre" class="btn btn-ghost">Ver experiencia</a>
+      </div>
+    </div>
+    <div class="hero-portrait">
+      <!-- Reemplazar por fotografía de retrato ejecutivo (formato vertical, fondo neutro, traje formal) -->
+      <div class="hero-portrait-label">Fotografía de retrato ejecutivo<br>[ reemplazar imagen ]</div>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>Explorar</span><span class="line"></span></div>
+</section>
+
+<div class="strip">
+  <div class="container">
+    <div class="strip-item"><div class="num">15+</div><div class="lbl">Años de experiencia</div></div>
+    <div class="strip-item"><div class="num">CEOs</div><div class="lbl">Y comités ejecutivos</div></div>
+    <div class="strip-item"><div class="num">3</div><div class="lbl">Sectores: industrial · financiero · tecnológico</div></div>
+    <div class="strip-item"><div class="num">ROI</div><div class="lbl">Enfoque en EBITDA y ejecución</div></div>
+  </div>
+</div>
+
+<section class="about" id="sobre">
+  <div class="container">
+    <div class="about-figure reveal">
+      <!-- Reemplazar por segunda fotografía institucional o de conferencia -->
+      <div class="about-figure-label">Fotografía institucional<br>[ reemplazar imagen ]</div>
+      <div class="frame-mark fm-tl"></div>
+      <div class="frame-mark fm-br"></div>
+    </div>
+    <div class="about-body reveal">
+      <p class="eyebrow">Sobre el consultor</p>
+      <h2 class="section-title">Liderazgo consciente al servicio de la ejecución</h2>
+      <p>Durante más de 15 años he acompañado a directores generales, comités directivos y equipos de alta dirección en procesos de transformación organizacional, alineación estratégica y escalamiento operativo.</p>
+      <p>Mi trabajo combina metodologías de gestión probadas —Scaling Up, OKRs y gestión del cambio— con un enfoque de liderazgo consciente, orientado a construir culturas de alto rendimiento y equipos capaces de sostener el crecimiento en el tiempo.</p>
+      <div class="about-quote">Las organizaciones no crecen por ambición, crecen por alineación entre estrategia, liderazgo y ejecución.</div>
+      <div class="about-tags">
+        <span>Scaling Up</span>
+        <span>OKRs &amp; KPIs</span>
+        <span>Gestión del cambio</span>
+        <span>Cultura de alto rendimiento</span>
+        <span>Team building</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="specialties bg-pearl" id="especializacion">
+  <div class="container">
+    <span class="wm">01</span>
+    <div class="section-head">
+      <p class="eyebrow reveal">Áreas de especialización</p>
+      <h2 class="section-title reveal">Un marco integral para escalar organizaciones</h2>
+      <p class="section-lede reveal">Seis disciplinas que trabajan en conjunto para alinear a los equipos directivos alrededor de una misma estrategia y un mismo ritmo de ejecución.</p>
+    </div>
+    <div class="spec-grid">
+      <div class="spec-card glass reveal">
+        <div class="spec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/></svg></div>
+        <h3>Executive Coaching</h3>
+        <p>Acompañamiento individual a directores generales para fortalecer criterio estratégico y capacidad de decisión.</p>
+      </div>
+      <div class="spec-card glass reveal">
+        <div class="spec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V9M12 19V4M20 19v-6"/></svg></div>
+        <h3>Alineación Estratégica</h3>
+        <p>Sincronización del comité directivo alrededor de prioridades, métricas y una misma narrativa de negocio.</p>
+      </div>
+      <div class="spec-card glass reveal">
+        <div class="spec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 6h6v6"/></svg></div>
+        <h3>Scaling Up</h3>
+        <p>Implementación de la metodología Scaling Up para escalar personas, estrategia, ejecución y efectivo.</p>
+      </div>
+      <div class="spec-card glass reveal">
+        <div class="spec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg></div>
+        <h3>OKRs &amp; KPIs</h3>
+        <p>Diseño de sistemas de objetivos y métricas que conectan la estrategia con la ejecución diaria.</p>
+      </div>
+      <div class="spec-card glass reveal">
+        <div class="spec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4v16h16"/><path d="M8 15l3-3 3 2 4-5"/></svg></div>
+        <h3>Gestión del Cambio</h3>
+        <p>Procesos estructurados de transformación organizacional con metodología Prosci.</p>
+      </div>
+      <div class="spec-card glass reveal">
+        <div class="spec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l3 6 6 .9-4.5 4.3 1 6.3-5.5-3-5.5 3 1-6.3L3 8.9 9 8z"/></svg></div>
+        <h3>Cultura de Alto Rendimiento</h3>
+        <p>Construcción de culturas organizacionales que sostienen resultados consistentes en el tiempo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="method">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow reveal">Marco de trabajo</p>
+      <h2 class="section-title reveal">Metodologías con validación internacional</h2>
+      <p class="section-lede reveal">Un mismo proceso de intervención, sostenido por herramientas y frameworks reconocidos en consultoría estratégica.</p>
+    </div>
+    <div class="divider reveal"></div>
+    <div class="method-rail reveal">
+      <div class="method-row">
+        <div class="method-item"><div class="method-dot"></div><h4>Scaling Up</h4><p>Escalamiento de personas, estrategia, ejecución y efectivo.</p></div>
+        <div class="method-item"><div class="method-dot"></div><h4>OKRs</h4><p>Objetivos y resultados clave en cascada.</p></div>
+        <div class="method-item"><div class="method-dot"></div><h4>KPI Management</h4><p>Tableros de control para decisiones directivas.</p></div>
+        <div class="method-item"><div class="method-dot"></div><h4>Prosci Change Mgmt.</h4><p>Gestión estructurada del cambio organizacional.</p></div>
+        <div class="method-item"><div class="method-dot"></div><h4>Hogan Assessments</h4><p>Evaluación de personalidad y riesgo directivo.</p></div>
+        <div class="method-item"><div class="method-dot"></div><h4>Evaluación 360°</h4><p>Retroalimentación integral de liderazgo.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="impact" id="impacto">
+  <div class="container">
+    <span class="wm wm-light">02</span>
+    <div class="section-head">
+      <p class="eyebrow reveal">Impacto medible</p>
+      <h2 class="section-title reveal">Resultados que se leen en el balance</h2>
+      <p class="section-lede reveal">El acompañamiento ejecutivo se mide en indicadores de negocio, no solo en percepción.</p>
+    </div>
+    <div class="counter-grid">
+      <div class="counter-card glass-dark reveal"><div class="counter-num" data-target="15" data-suffix="+">0</div><div class="counter-lbl">Años de experiencia</div></div>
+      <div class="counter-card glass-dark reveal"><div class="counter-num" data-target="1200" data-suffix="+">0</div><div class="counter-lbl">Empleados impactados</div></div>
+      <div class="counter-card glass-dark reveal"><div class="counter-num" data-target="18" data-suffix="%">0</div><div class="counter-lbl">Incremento de EBITDA</div></div>
+      <div class="counter-card glass-dark reveal"><div class="counter-num" data-target="5" data-suffix="M+" data-prefix="USD ">0</div><div class="counter-lbl">Mentoreados en startups</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cases bg-pearl" id="casos">
+  <div class="container">
+    <span class="wm">03</span>
+    <div class="section-head">
+      <p class="eyebrow reveal">Casos de éxito</p>
+      <h2 class="section-title reveal">Resultados en organizaciones reales</h2>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card glass reveal">
+        <p class="case-sector">Grupo industrial · 1,200 colaboradores</p>
+        <p>Rediseño del sistema de OKRs y del comité directivo para alinear objetivos de planta con la estrategia corporativa.</p>
+        <div class="case-result">+18% <span>EBITDA en 18 meses</span></div>
+      </div>
+      <div class="case-card glass reveal">
+        <p class="case-sector">Startup tecnológica · Serie A</p>
+        <p>Acompañamiento al CEO y al equipo fundador durante el proceso de levantamiento de capital y estructuración del comité.</p>
+        <div class="case-result">USD 5M+ <span>Ronda de inversión</span></div>
+      </div>
+      <div class="case-card glass reveal">
+        <p class="case-sector">Institución financiera regional</p>
+        <p>Programa de desarrollo de gerentes y gestión del cambio para una transformación de cultura de servicio.</p>
+        <div class="case-result">↓ Rotación <span>De talento clave</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="forums">
+  <div class="container">
+    <p class="eyebrow reveal" style="justify-content:center;">Conferencias y foros</p>
+    <h2 class="section-title reveal" style="margin-left:auto;margin-right:auto;">Voz activa en los principales foros empresariales</h2>
+    <p class="section-lede reveal" style="margin-left:auto;margin-right:auto;">Conferencista invitado en organismos empresariales de referencia en México y Latinoamérica.</p>
+    <div class="divider divider-center reveal"></div>
+    <div class="forums-row reveal">
+      <div class="forum-badge glass">CANACINTRA</div>
+      <div class="forum-badge glass">COPARMEX</div>
+      <div class="forum-badge glass">CANACO</div>
+    </div>
+  </div>
+</section>
+
+<section class="services bg-pearl" id="servicios">
+  <div class="container">
+    <span class="wm">04</span>
+    <div class="section-head">
+      <p class="eyebrow reveal">Servicios ejecutivos</p>
+      <h2 class="section-title reveal">Formatos de acompañamiento</h2>
+    </div>
+    <div class="services-list reveal">
+      <div class="service-row"><span class="idx">01</span><span class="name">Coaching ejecutivo individual</span><span class="tag">CEO / Dirección general</span></div>
+      <div class="service-row"><span class="idx">02</span><span class="name">Coaching para comité directivo</span><span class="tag">Alta dirección</span></div>
+      <div class="service-row"><span class="idx">03</span><span class="name">Team building estratégico</span><span class="tag">Equipos directivos</span></div>
+      <div class="service-row"><span class="idx">04</span><span class="name">Desarrollo de gerentes</span><span class="tag">Mandos medios</span></div>
+      <div class="service-row"><span class="idx">05</span><span class="name">Planeación estratégica</span><span class="tag">Organización completa</span></div>
+      <div class="service-row"><span class="idx">06</span><span class="name">Cultura y cambio organizacional</span><span class="tag">Transformación</span></div>
+      <div class="service-row"><span class="idx">07</span><span class="name">Conferencias magistrales</span><span class="tag">Foros y convenciones</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <span class="wm wm-light">05</span>
+    <div class="section-head">
+      <p class="eyebrow reveal">Testimonios</p>
+      <h2 class="section-title reveal" style="color:#fff;">La visión de quienes lo han vivido</h2>
+      <p class="testi-note reveal">Testimonios de ejemplo — sustituir por citas reales de clientes.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card glass-dark reveal">
+        <p class="testi-quote">"El proceso nos obligó a tomar decisiones que veníamos posponiendo. En año y medio transformamos la forma en que el comité directivo trabaja."</p>
+        <p class="testi-name">Director General</p>
+        <p class="testi-role">Grupo industrial, México</p>
+      </div>
+      <div class="testi-card glass-dark reveal">
+        <p class="testi-quote">"Nos ayudó a construir un sistema de OKRs que finalmente conecta la estrategia con lo que hace cada gerente todos los días."</p>
+        <p class="testi-name">CEO</p>
+        <p class="testi-role">Empresa de tecnología, Latinoamérica</p>
+      </div>
+      <div class="testi-card glass-dark reveal">
+        <p class="testi-quote">"Su enfoque en resultados medibles, sin perder de vista a las personas, es poco común en el coaching ejecutivo."</p>
+        <p class="testi-name">Directora de Operaciones</p>
+        <p class="testi-role">Institución financiera regional</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta" id="contacto">
+  <div class="container">
+    <p class="eyebrow reveal" style="justify-content:center;">Siguiente paso</p>
+    <h2 class="reveal">Las organizaciones que crecen sosteniblemente alinean estrategia, liderazgo y ejecución.</h2>
+    <a href="mailto:eulises@duranintegralsolutions.com.mx" class="btn btn-primary reveal">Solicitar reunión ejecutiva</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand">EULISES DURÁN<span class="role">Consultor Financiero &amp; Executive Coach</span></p>
+        <p style="margin-top:20px;max-width:320px;">Alineación estratégica, liderazgo consciente y escalamiento operacional para organizaciones de alto crecimiento en Latinoamérica.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Ubicación</h5>
+        <p>Ciudad Delicias, Chihuahua, México</p>
+        <!-- Reemplazar ciudad / país si es distinta -->
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <a href="mailto:eulises@duranintegralsolutions.com.mx">eulises@duranintegralsolutions.com.mx</a>
+        <a href="https://wa.me/528712698233" target="_blank" rel="noopener">WhatsApp · 871 269 8233</a>
+        <!-- Reemplazar enlace de LinkedIn -->
+        <a href="https://linkedin.com/in/eulises-duran" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Eulises Durán. Todos los derechos reservados.</span>
+      <span>Consultor Financiero &amp; Executive Coach · Latinoamérica</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/528712698233" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.92C21.96 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.1.11-1.77-.11-.4-.13-.93-.3-1.6-.6-2.8-1.21-4.63-4.03-4.77-4.22-.14-.19-1.14-1.52-1.14-2.9 0-1.37.72-2.05.98-2.33.26-.28.56-.35.75-.35h.53c.17 0 .4-.06.62.48.24.58.82 2 .89 2.14.07.14.11.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.29.29-.12.57.17.28.75 1.24 1.61 2 .24.21.5.42.75.53.24.11.4.09.55-.05.15-.14.65-.7.83-.94.18-.24.35-.2.58-.11.24.09 1.53.72 1.79.85.26.14.44.2.5.32.06.12.06.68-.18 1.35z"/></svg>
+</a>
+
+<script>
+(function(){
+  const nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 60){ nav.classList.add('scrolled'); }
+    else{ nav.classList.remove('scrolled'); }
+  }, { passive:true });
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){ entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(el => io.observe(el));
+
+  const counters = document.querySelectorAll('.counter-num');
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const el = entry.target;
+        const target = parseFloat(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        const prefix = el.dataset.prefix || '';
+        const duration = 1700;
+        const start = performance.now();
+        function tick(now){
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = Math.floor(eased * target);
+          el.textContent = prefix + value + suffix;
+          if(progress < 1){ requestAnimationFrame(tick); }
+          else{ el.textContent = prefix + target + suffix; }
+        }
+        requestAnimationFrame(tick);
+        counterIO.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(el => counterIO.observe(el));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+  function resize(){
+    w = canvas.offsetWidth; h = canvas.offsetHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  function drawGrid(){
+    ctx.clearRect(0,0,w,h);
+    ctx.strokeStyle = 'rgba(214,228,245,0.05)';
+    ctx.lineWidth = 1;
+    const gap = 70;
+    for(let x = 0; x < w; x += gap){ ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,h); ctx.stroke(); }
+    for(let y = 0; y < h; y += gap){ ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(w,y); ctx.stroke(); }
+  }
+
+  const points = [];
+  const N = 7;
+  for(let i=0;i<N;i++){
+    const x = (w / (N-1)) * i;
+    const baseY = h * 0.72 - (i * (h*0.30/(N-1))) + (Math.sin(i*1.3)*18);
+    points.push({x, y: baseY});
+  }
+
+  let progress = 0;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function drawLine(p){
+    drawGrid();
+    const visiblePts = Math.max(1, Math.floor(points.length * p));
+    ctx.beginPath();
+    ctx.moveTo(points[0].x, points[0].y);
+    for(let i=1;i<visiblePts;i++){
+      const prev = points[i-1], cur = points[i];
+      const cx = (prev.x+cur.x)/2;
+      ctx.bezierCurveTo(cx, prev.y, cx, cur.y, cur.x, cur.y);
+    }
+    ctx.strokeStyle = 'rgba(214,228,245,0.5)';
+    ctx.lineWidth = 1.3;
+    ctx.stroke();
+    for(let i=0;i<visiblePts;i++){
+      ctx.beginPath();
+      ctx.arc(points[i].x, points[i].y, 3, 0, Math.PI*2);
+      ctx.fillStyle = i === visiblePts-1 ? '#D6E4F5' : 'rgba(214,228,245,0.3)';
+      ctx.fill();
+    }
+  }
+
+  function animate(){
+    if(reduceMotion){ drawLine(1); return; }
+    progress += 0.006;
+    if(progress > 1){ progress = 1; }
+    drawLine(progress);
+    if(progress < 1){ requestAnimationFrame(animate); }
+  }
+  requestAnimationFrame(() => { resize(); animate(); });
+
+  if(!reduceMotion){
+    window.addEventListener('scroll', function(){
+      const heroEl = document.getElementById('hero');
+      const rect = heroEl.getBoundingClientRect();
+      if(rect.bottom > 0){ canvas.style.transform = `translateY(${window.scrollY * 0.12}px)`; }
+    }, { passive:true });
+  }
+})();
+</script>
+
+</body>
+</html>
